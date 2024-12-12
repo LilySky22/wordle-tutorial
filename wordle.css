@@ -1,0 +1,217 @@
+/* General Body and Layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6; /* Light background for a clean look */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Title */
+#title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Horizontal Line */
+hr {
+    width: 60%;
+    border: 0;
+    border-top: 2px solid #e0e0e0;
+    margin: 20px auto;
+}
+
+/* Game Board Container */
+#board {
+    width: 320px;
+    height: 380px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+/* Tile Style */
+.tile {
+    background-color: #e4e6eb; /* Light gray for inactive tiles */
+    border-radius: 8px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Tile Feedback */
+.correct {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border-color: #388E3C;
+}
+
+.present {
+    background-color: #FFB84D; /* A softer, warmer yellow for present */
+    color: white;
+    border-color: #FF9800;
+}
+
+.absent {
+    background-color: #BDBDBD; /* Gray */
+    color: white;
+    border-color: #9E9E9E;
+}
+
+/* Keyboard Row */
+.keyboard-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 8px;
+}
+
+/* Key Tile Style */
+.key-tile {
+    background-color: #f4f4f4;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover Effect on Keys */
+.key-tile:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Active State for Keys */
+.key-tile:active {
+    background-color: #d0d0d0;
+    transform: scale(0.95);
+}
+
+/* Enter Key Style */
+.enter-key-tile {
+    background-color: #4CAF50;
+    width: 90px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Enter Key */
+.enter-key-tile:hover {
+    background-color: #388E3C;
+}
+
+/* Backspace Key Style */
+#Backspace {
+    background-color: #F44336;
+    width: 90px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Backspace */
+#Backspace:hover {
+    background-color: #D32F2F;
+}
+
+/* Key Color Change on Press */
+#KeyA.correct, #KeyB.correct, #KeyC.correct, #KeyD.correct, #KeyE.correct, 
+#KeyF.correct, #KeyG.correct, #KeyH.correct, #KeyI.correct, #KeyJ.correct, 
+#KeyK.correct, #KeyL.correct, #KeyM.correct, #KeyN.correct, #KeyO.correct, 
+#KeyP.correct, #KeyQ.correct, #KeyR.correct, #KeyS.correct, #KeyT.correct, 
+#KeyU.correct, #KeyV.correct, #KeyW.correct, #KeyX.correct, #KeyY.correct, 
+#KeyZ.correct {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+#KeyA.present, #KeyB.present, #KeyC.present, #KeyD.present, #KeyE.present, 
+#KeyF.present, #KeyG.present, #KeyH.present, #KeyI.present, #KeyJ.present, 
+#KeyK.present, #KeyL.present, #KeyM.present, #KeyN.present, #KeyO.present, 
+#KeyP.present, #KeyQ.present, #KeyR.present, #KeyS.present, #KeyT.present, 
+#KeyU.present, #KeyV.present, #KeyW.present, #KeyX.present, #KeyY.present, 
+#KeyZ.present {
+    background-color: #FFB84D; /* Yellow */
+    color: white;
+}
+
+#KeyA.absent, #KeyB.absent, #KeyC.absent, #KeyD.absent, #KeyE.absent, 
+#KeyF.absent, #KeyG.absent, #KeyH.absent, #KeyI.absent, #KeyJ.absent, 
+#KeyK.absent, #KeyL.absent, #KeyM.absent, #KeyN.absent, #KeyO.absent, 
+#KeyP.absent, #KeyQ.absent, #KeyR.absent, #KeyS.absent, #KeyT.absent, 
+#KeyU.absent, #KeyV.absent, #KeyW.absent, #KeyX.absent, #KeyY.absent, 
+#KeyZ.absent {
+    background-color: #BDBDBD; /* Gray */
+    color: white;
+}
+
+/* Answer Text */
+#answer {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+    #board {
+        width: 80%;
+        height: auto;
+    }
+
+    .tile {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .key-tile, .enter-key-tile, #Backspace {
+        width: 45px;
+        height: 45px;
+    }
+
+    #title {
+        font-size: 36px;
+    }
+}
